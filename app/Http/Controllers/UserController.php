@@ -84,7 +84,7 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        $use->update($request->validated());
+        $user->update($request->validated());
         $user->roles()->sync($request->input('roles',[]));
         return redirect()->route('users.index');
     }
